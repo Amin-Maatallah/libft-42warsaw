@@ -14,12 +14,16 @@ $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 	rm -f $(OBJECTS)
 
+
+test: $(NAME)
+	$(CC) -o test test.c -L. -lft
+
 clean:
 	rm -f $(OBJECTS)
 
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) test
 
 
 re: fclean all

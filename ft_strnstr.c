@@ -6,17 +6,19 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 14:35:59 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/03 19:00:28 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:29:59 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
+	if (len == 0 && (little == NULL || big == NULL))
+		return (NULL);
 	i = 0;
 	if (little[0] == '\0')
 		return ((char *)big);

@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 15:49:55 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/03 18:51:13 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:07:44 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*ptr;
 
-	if (!b)
-		return (NULL);
 	i = 0;
+	ptr = (unsigned char *)b;
 	while (i < len)
-	{
-		*(unsigned char *)(b + i) = (unsigned char)c;
-		i++;
-	}
+		ptr[i++] = (unsigned char)c;
 	return (b);
 }

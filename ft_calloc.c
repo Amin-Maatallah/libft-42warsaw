@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 15:44:51 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/03 18:42:32 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:25:59 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void	*ft_calloc(size_t n, size_t size)
 {
-	void	*ptr;
+	size_t tot_size;
+	void *dst;
 
-	ptr = malloc(n * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, n);
-	return (ptr);
+	tot_size = size * n;
+	if (!(dst = malloc(tot_size)))
+		return (0);
+	ft_memset(dst, 0, tot_size);
+	return (dst);
 }

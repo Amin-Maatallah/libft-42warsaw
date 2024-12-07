@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 15:36:27 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/03 18:53:04 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:27:13 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,10 @@
 
 char	*ft_strdup(const char *src)
 {
-	char	*res;
-	int		i;
-	int		l;
+	char *s2;
 
-	if (!src)
-		return (NULL);
-	i = 0;
-	l = 0;
-	while (src[l] != '\0')
-		l++;
-	res = malloc(l);
-	while (i <= l)
-	{
-		res[i] = src[i];
-		i++;
-	}
-	return (res);
+	if (!(s2 = (char *)malloc(ft_strlen(src) + 1)))
+		return (0);
+	ft_memcpy(s2, src, ft_strlen(src) + 1);
+	return (s2);
 }
