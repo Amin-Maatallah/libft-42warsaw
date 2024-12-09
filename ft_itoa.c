@@ -6,27 +6,48 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:58:04 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/07 16:31:48 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:21:26 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int	get_size(int n)
 {
-	char *str;
-	long nbr;
-	size_t size;
+	if (n > 0)
+		return (0);
+	return (1);
+}
 
-	nbr = n;
-	size = n > 0 ? 0 : 1;
-	nbr = nbr > 0 ? nbr : -nbr;
+static long	is_nega(long nbr)
+{
+	if (nbr < 0)
+		return (-nbr);
+	return (nbr);
+}
+
+static int	calc_size(int n, int size)
+{
 	while (n)
 	{
 		n /= 10;
 		size++;
 	}
-	if (!(str = (char *)malloc(size + 1)))
+	return (size);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	long	nbr;
+	size_t	size;
+
+	nbr = n;
+	size = get_size(n);
+	nbr = is_nega(nbr);
+	size = calc_size(n, size);
+	str = (char *)malloc(size + 1);
+	if (!(str))
 		return (0);
 	*(str + size--) = '\0';
 	while (nbr > 0)

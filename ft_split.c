@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:57:11 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/04 14:57:34 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:04:58 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!s)
-		return (NULL);
 	res = (char **)malloc(sizeof(char *) * (ft_strlen(s) + 1));
-	if (!res)
+	if (!res || !s)
 		return (NULL);
 	while (s[i])
 	{
@@ -34,8 +32,6 @@ char	**ft_split(char const *s, char c)
 		{
 			k = 0;
 			res[j] = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-			if (!res[j])
-				return (NULL);
 			while (s[i] && s[i] != c)
 				res[j][k++] = s[i++];
 			res[j++][k] = '\0';

@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 14:28:16 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/07 16:21:52 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/08 23:03:18 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t c;
-	size_t d;
+	size_t	c;
+	size_t	d;
 
 	if (dstsize == 0)
 		return (ft_strlen(src));
-
 	if (dstsize <= ft_strlen(dst))
 		return (dstsize + ft_strlen(src));
 	c = ft_strlen(dst);

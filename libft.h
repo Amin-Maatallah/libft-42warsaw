@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:38:34 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/07 16:28:06 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/08 22:57:35 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,9 +103,9 @@ int					ft_lstsize(t_list *lst);
 
 t_list				*ft_lstlast(t_list *lst);
 
-void				ft_lstadd_front(t_list **alst, t_list *new);
+void				ft_lstadd_front(t_list **lst, t_list *new);
 
-void				ft_lstadd_back(t_list **alst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *new);
 
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 
