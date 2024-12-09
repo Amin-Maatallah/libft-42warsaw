@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:38:34 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/08 22:57:35 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:54:21 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
-typedef struct s_split_next
-{
-	size_t			start;
-	size_t			length;
-}					t_split_next;
 
 int					ft_atoi(const char *str);
 
