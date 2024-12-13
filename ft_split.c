@@ -6,37 +6,55 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:57:11 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/09 17:04:58 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:20:41 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	ft_countword(char const *s, char c)
+{
+	size_t	count;
+
+	if (!*s)
+		return (0);
+	count = 0;
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s)
+			count++;
+		while (*s != c && *s)
+			s++;
+	}
+	return (count);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**res;
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	char	**lst;
+	size_t	word_len;
+	int		i;
 
+	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
+	if (!s || !lst)
+		return (0);
 	i = 0;
-	j = 0;
-	res = (char **)malloc(sizeof(char *) * (ft_strlen(s) + 1));
-	if (!res || !s)
-		return (NULL);
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
+		while (*s == c && *s)
+			s++;
+		if (*s)
 		{
-			k = 0;
-			res[j] = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-			while (s[i] && s[i] != c)
-				res[j][k++] = s[i++];
-			res[j++][k] = '\0';
+			if (!ft_strchr((char *)s, c))
+				word_len = ft_strlen(s);
+			else
+				word_len = ft_strchr((char *)s, c) - s;
+			lst[i++] = ft_substr(s, 0, word_len);
+			s += word_len;
 		}
 	}
-	res[j] = NULL;
-	return (res);
+	lst[i] = NULL;
+	return (lst);
 }
