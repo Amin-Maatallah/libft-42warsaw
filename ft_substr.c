@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:52:42 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/14 16:24:45 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/14 16:29:14 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size = ft_strlen(s + start);
 	if (size < len)
 		len = size;
-	if (!(tab = (char *)malloc((len + 1) * sizeof(char))))
+	tab = (char *)malloc((len + 1) * sizeof(char));
+	if (!tab)
 		return (NULL);
 	count = 0;
 	while (count < len)

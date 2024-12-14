@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 15:44:51 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/14 16:17:53 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/14 16:28:32 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t bytes;
-	void *ptr;
+	size_t	bytes;
+	void	*ptr;
 
 	bytes = nmemb * size;
 	if (size && ((bytes / size) != nmemb))
