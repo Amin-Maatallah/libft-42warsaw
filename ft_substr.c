@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:52:42 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/11 19:57:24 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/14 16:24:45 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	size_t	i;
+	size_t	count;
+	size_t	size;
+	char	*tab;
 
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) < start)
+	if ((unsigned int)ft_strlen(s) < start)
 		return (ft_strdup(""));
-	if (ft_strlen(s) < len)
-		len = ft_strlen(s) - start;
-	sub = (char *)malloc(len + 1);
-	if (!sub)
+	size = ft_strlen(s + start);
+	if (size < len)
+		len = size;
+	if (!(tab = (char *)malloc((len + 1) * sizeof(char))))
 		return (NULL);
-	i = 0;
-	while (i < len && s[start + i])
+	count = 0;
+	while (count < len)
 	{
-		sub[i] = s[start + i];
-		i++;
+		tab[count] = s[start + count];
+		count++;
 	}
-	sub[i] = '\0';
-	return (sub);
+	tab[count] = '\0';
+	return (tab);
 }
