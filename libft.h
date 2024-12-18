@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:38:34 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/14 16:14:41 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/18 09:20:25 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int					ft_atoi(const char *str);
 
 void				ft_bzero(void *s, size_t n);
 
-void				*ft_calloc(size_t count, size_t size);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 int					ft_isalnum(int c);
 
@@ -39,8 +39,6 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 
 char				*ft_itoa(int n);
-
-void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 
 void				*ft_memchr(const void *s, int c, size_t n);
 
@@ -64,13 +62,13 @@ char				**ft_split(char const *s, char c);
 
 char				*ft_strchr(char *s, int c);
 
-char				*ft_strdup(const char *s1);
+char				*ft_strdup(const char *src);
 
 char				*ft_strjoin(char const *s1, char const *s2);
 
-size_t				ft_strlcat(char *dst, const char *src, size_t size);
+size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 
-size_t				ft_strlcpy(char *dst, const char *src, size_t size);
+size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 size_t				ft_strlen(const char *s);
 
@@ -80,7 +78,7 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 
-char				*ft_strnstr(const char *haystack, const char *needle,
+char				*ft_strnstr(const char *big, const char *little,
 						size_t len);
 
 char				*ft_strrchr(const char *s, int c);
