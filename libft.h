@@ -6,7 +6,7 @@
 /*   By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:38:34 by amaatall          #+#    #+#             */
-/*   Updated: 2024/12/18 09:20:25 by amaatall         ###   ########.fr       */
+/*   Updated: 2024/12/18 10:13:04 by amaatall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ typedef struct s_list
 int					ft_atoi(const char *str);
 
 void				ft_bzero(void *s, size_t n);
-
-void	*ft_calloc(size_t nmemb, size_t size);
 
 int					ft_isalnum(int c);
 
@@ -51,6 +49,8 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
 
 void				ft_putchar_fd(char c, int fd);
+
+void				*ft_calloc(size_t nmemb, size_t size);
 
 void				ft_putendl_fd(char *s, int fd);
 
