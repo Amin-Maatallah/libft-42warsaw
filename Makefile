@@ -6,7 +6,7 @@
 #    By: amaatall <amaatall@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/09 17:22:32 by amaatall          #+#    #+#              #
-#    Updated: 2024/12/18 08:48:57 by amaatall         ###   ########.fr        #
+#    Updated: 2024/12/18 10:25:56 by amaatall         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
 
-bonus: $(OBJECTS) $(BONUS_OBJS)
+bonus: fclean $(OBJECTS) $(BONUS_OBJS)
 	ar rcs $(NAME) $(OBJECTS) $(BONUS_OBJS)
 
 
